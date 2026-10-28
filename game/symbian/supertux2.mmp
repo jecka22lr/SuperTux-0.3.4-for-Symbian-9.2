@@ -1,0 +1,146 @@
+// SuperTux 0.3.4 (Milestone 2) for Symbian S60 3rd Edition - work in progress
+TARGET        supertux2.exe
+TARGETTYPE    exe
+TARGETPATH    \sys\bin
+UID           0x100039ce 0xA000A030
+
+EPOCSTACKSIZE 81920
+EPOCHEAPSIZE  4194304 50331648
+
+ALWAYS_BUILD_AS_ARM
+
+MACRO         HAVE_SDL
+MACRO         OGG_USE_TREMOR_SEEK_BUG
+
+// angle-bracket includes (<config.h>, <squirrel.h>, <tinygettext/...>, <boost/...>) need SYSTEMINCLUDE
+SYSTEMINCLUDE . \epoc32\include \epoc32\include\stdapis \epoc32\include\stdapis\stlport
+SYSTEMINCLUDE \epoc32\include\esdl \epoc32\include\physfs
+SYSTEMINCLUDE ..\src ..\external\squirrel\include ..\external\tinygettext ..\external\findlocale
+SYSTEMINCLUDE ..\external\obstack ..\external\binreloc
+USERINCLUDE   . ..\src ..\external\squirrel\include ..\external\squirrel\squirrel ..\external\tinygettext\tinygettext
+
+SOURCEPATH    ..\external\findlocale
+SOURCE        findlocale.c
+
+SOURCEPATH    ..\external\obstack
+SOURCE        obstack.c
+
+SOURCEPATH    ..\external\squirrel\sqstdlib
+SOURCE        sqstdaux.cpp sqstdblob.cpp sqstdio.cpp sqstdmath.cpp sqstdrex.cpp sqstdstream.cpp
+SOURCE        sqstdstring.cpp sqstdsystem.cpp
+
+SOURCEPATH    ..\external\squirrel\squirrel
+SOURCE        sqapi.cpp sqbaselib.cpp sqclass.cpp sqcompiler.cpp sqdebug.cpp sqfuncstate.cpp
+SOURCE        sqlexer.cpp sqmem.cpp sqobject.cpp sqstate.cpp sqtable.cpp sqvm.cpp
+
+SOURCEPATH    ..\external\tinygettext\tinygettext
+SOURCE        dictionary.cpp dictionary_manager.cpp iconv.cpp language.cpp plural_forms.cpp po_parser.cpp
+SOURCE        tinygettext.cpp unix_file_system.cpp
+
+SOURCEPATH    ..\src\addon
+SOURCE        addon.cpp addon_manager.cpp md5.cpp
+
+SOURCEPATH    ..\src\audio
+SOURCE        dummy_sound_source.cpp mixer_sound_source.cpp sound_manager.cpp
+
+SOURCEPATH    ..\src\badguy
+SOURCE        angrystone.cpp badguy.cpp bomb.cpp bouncing_snowball.cpp captainsnowball.cpp crystallo.cpp
+SOURCE        dart.cpp darttrap.cpp dispenser.cpp fish.cpp flame.cpp flyingsnowball.cpp
+SOURCE        ghosttree.cpp haywire.cpp igel.cpp jumpy.cpp kamikazesnowball.cpp kugelblitz.cpp
+SOURCE        mole.cpp mole_rock.cpp mrbomb.cpp mriceblock.cpp mrtree.cpp owl.cpp
+SOURCE        plant.cpp poisonivy.cpp root.cpp short_fuse.cpp skullyhop.cpp skydive.cpp
+SOURCE        smartball.cpp snail.cpp snowball.cpp snowman.cpp spidermite.cpp spiky.cpp
+SOURCE        sspiky.cpp stalactite.cpp stumpy.cpp toad.cpp totem.cpp treewillowisp.cpp
+SOURCE        walking_badguy.cpp walkingleaf.cpp willowisp.cpp yeti.cpp yeti_stalactite.cpp zeekling.cpp
+
+SOURCEPATH    ..\src\control
+SOURCE        codecontroller.cpp controller.cpp joystickkeyboardcontroller.cpp
+
+SOURCEPATH    ..\src\gui
+SOURCE        button.cpp button_group.cpp menu.cpp menu_item.cpp menu_manager.cpp mousecursor.cpp
+
+SOURCEPATH    ..\src\lisp
+SOURCE        lexer.cpp lisp.cpp list_iterator.cpp parser.cpp writer.cpp
+
+SOURCEPATH    ..\src\math
+SOURCE        aatriangle.cpp random_generator.cpp rectf.cpp size.cpp sizef.cpp vector.cpp
+
+SOURCEPATH    ..\src\object
+SOURCE        ambient_sound.cpp anchor_point.cpp background.cpp bicycle_platform.cpp block.cpp bonus_block.cpp
+SOURCE        bouncy_coin.cpp brick.cpp broken_brick.cpp bullet.cpp camera.cpp candle.cpp
+SOURCE        cloud_particle_system.cpp coin.cpp comet_particle_system.cpp decal.cpp display_effect.cpp electrifier.cpp
+SOURCE        endsequence.cpp endsequence_fireworks.cpp endsequence_walkleft.cpp endsequence_walkright.cpp explosion.cpp falling_coin.cpp
+SOURCE        firefly.cpp fireworks.cpp floating_image.cpp floating_text.cpp flower.cpp ghost_particle_system.cpp
+SOURCE        gradient.cpp growup.cpp hurting_platform.cpp icecrusher.cpp infoblock.cpp invisible_block.cpp
+SOURCE        invisible_wall.cpp ispy.cpp lantern.cpp level_time.cpp light.cpp magicblock.cpp
+SOURCE        moving_sprite.cpp oneup.cpp particles.cpp particlesystem.cpp particlesystem_interactive.cpp path.cpp
+SOURCE        path_walker.cpp platform.cpp player.cpp pneumatic_platform.cpp powerup.cpp pulsing_light.cpp
+SOURCE        pushbutton.cpp rain_particle_system.cpp rainsplash.cpp rock.cpp rusty_trampoline.cpp scripted_object.cpp
+SOURCE        skull_tile.cpp smoke_cloud.cpp snow_particle_system.cpp specialriser.cpp spotlight.cpp sprite_particle.cpp
+SOURCE        star.cpp text_object.cpp thunderstorm.cpp tilemap.cpp trampoline.cpp unstable_tile.cpp
+SOURCE        weak_block.cpp wind.cpp
+
+SOURCEPATH    ..\src\physfs
+SOURCE        ifile_stream.cpp ifile_streambuf.cpp ofile_stream.cpp ofile_streambuf.cpp physfs_file_system.cpp physfs_sdl.cpp
+
+SOURCEPATH    ..\src\scripting
+SOURCE        functions.cpp serialize.cpp squirrel_error.cpp squirrel_util.cpp thread_queue.cpp time_scheduler.cpp
+SOURCE        wrapper.cpp
+
+SOURCEPATH    ..\src\sprite
+SOURCE        sprite.cpp sprite_data.cpp sprite_manager.cpp
+
+SOURCEPATH    ..\src\supertux
+SOURCE        collision.cpp colorscheme.cpp console.cpp direction.cpp fadeout.cpp flip_level_transformer.cpp
+SOURCE        game_object.cpp game_session.cpp gameconfig.cpp globals.cpp info_box.cpp info_box_line.cpp
+SOURCE        level.cpp level_transformer.cpp levelintro.cpp main.cpp moving_object.cpp object_factory.cpp
+SOURCE        physic.cpp player_status.cpp resources.cpp screen_manager.cpp sector.cpp shrinkfade.cpp
+SOURCE        spawn_point.cpp statistics.cpp textscroller.cpp tile.cpp tile_manager.cpp tile_set.cpp
+SOURCE        tile_set_parser.cpp timer.cpp title_screen.cpp world.cpp
+
+SOURCEPATH    ..\src\supertux\menu
+SOURCE        addon_menu.cpp contrib_menu.cpp contrib_world_menu.cpp game_menu.cpp joystick_menu.cpp keyboard_menu.cpp
+SOURCE        language_menu.cpp main_menu.cpp menu_storage.cpp options_menu.cpp profile_menu.cpp worldmap_menu.cpp
+
+SOURCEPATH    ..\src\trigger
+SOURCE        climbable.cpp door.cpp scripttrigger.cpp secretarea_trigger.cpp sequence_trigger.cpp switch.cpp
+SOURCE        trigger_base.cpp
+
+SOURCEPATH    ..\src\util
+SOURCE        file_system.cpp log.cpp reader.cpp string_util.cpp utf8_iterator.cpp
+
+SOURCEPATH    ..\src\video
+SOURCE        color.cpp drawing_context.cpp font.cpp renderer.cpp surface.cpp texture_manager.cpp
+SOURCE        video_systems.cpp
+
+SOURCEPATH    ..\src\video\sdl
+SOURCE        sdl_lightmap.cpp sdl_renderer.cpp sdl_texture.cpp
+
+SOURCEPATH    ..\src\worldmap
+SOURCE        special_tile.cpp sprite_change.cpp teleporter.cpp tux.cpp worldmap.cpp
+
+SOURCEPATH    renamed
+SOURCE        scripting_camera.cpp scripting_candle.cpp scripting_floating_image.cpp scripting_level.cpp
+SOURCE        scripting_level_time.cpp scripting_platform.cpp scripting_thunderstorm.cpp scripting_tilemap.cpp
+SOURCE        scripting_wind.cpp tinygettext_log.cpp worldmap_direction.cpp worldmap_level.cpp
+SOURCE        worldmap_spawn_point.cpp
+
+SOURCEPATH    .
+SOURCE        symbian_main.cpp sdl_missing.c
+
+STATICLIBRARY sdlmain.lib sdl_mixer_ogg.lib tremor.lib physfs.lib sdl_image.lib lpng.lib
+LIBRARY       st2sdl.lib st2sdlexe.lib libstdcpp.lib libc.lib libm.lib libpthread.lib libz.lib
+LIBRARY       euser.lib estlib.lib
+
+SOURCEPATH    .
+START RESOURCE supertux2.rss
+HEADER
+TARGETPATH    \resource\apps
+LANG          SC
+END
+
+START RESOURCE supertux2_reg.rss
+TARGETPATH    \private\10003a3f\apps
+END
+
+CAPABILITY    LocalServices

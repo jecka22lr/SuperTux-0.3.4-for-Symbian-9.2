@@ -1,0 +1,11 @@
+PRJ_PLATFORMS
+GCCE
+
+PRJ_EXPORTS
+..\ivorbisfile.h \epoc32\include\tremor\ivorbisfile.h
+..\ivorbiscodec.h \epoc32\include\tremor\ivorbiscodec.h
+..\include\ogg\ogg.h \epoc32\include\ogg\ogg.h
+..\include\ogg\os_types.h \epoc32\include\ogg\os_types.h
+
+PRJ_MMPFILES
+tremor.mmp

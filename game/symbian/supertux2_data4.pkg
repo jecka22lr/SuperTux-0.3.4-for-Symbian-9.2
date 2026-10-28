@@ -1,0 +1,17 @@
+;;; SuperTux 0.3.4 for S60 3rd Edition - split release, game data part 4 of 4
+&EN
+#{"SuperTux 2 data 4 of 4"},(0xA000A036),1,0,0
+%{"SuperTux Devel Team & Jecka22LR"}
+:"Jecka22LR"
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+; needs the SuperTux 2 program package installed first
+(0xA000A030), 1, 0, 0, {"SuperTux 2"}
+
+; more community levels for 0.3.x (GPL / CC-BY-SA, from the June 2013 add-on collection)
+"..\..\package\addons\anja-christophs-levels.zip"-"!:\resource\apps\supertux2\addons\anja-christophs-levels.zip"
+"..\..\package\addons\torfi-dungeon-island.zip"-"!:\resource\apps\supertux2\addons\torfi-dungeon-island.zip"
+"..\..\package\addons\hume-islands.zip"-"!:\resource\apps\supertux2\addons\hume-islands.zip"
+"..\..\package\addons\hume-rainbow-cave.zip"-"!:\resource\apps\supertux2\addons\hume-rainbow-cave.zip"
+"..\..\package\addons\lmh-matties-world.zip"-"!:\resource\apps\supertux2\addons\lmh-matties-world.zip"
+"..\..\package\addons\mantis-valley.zip"-"!:\resource\apps\supertux2\addons\mantis-valley.zip"
+"..\..\package\addons\schaefers-tux-strikes-back.zip"-"!:\resource\apps\supertux2\addons\schaefers-tux-strikes-back.zip"

@@ -1,0 +1,29 @@
+TARGET        oggtest.exe
+TARGETTYPE    exe
+TARGETPATH    \sys\bin
+UID           0x100039ce 0xA000A020
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis \epoc32\include\esdl
+USERINCLUDE   ..\src
+SOURCEPATH    ..\src
+SOURCE        oggtest.cpp
+
+EPOCSTACKSIZE 81920
+EPOCHEAPSIZE  1048576 16777216
+
+STATICLIBRARY sdlmain.lib sdl_mixer_ogg.lib tremor.lib
+LIBRARY       sdl.lib sdlexe.lib libc.lib libm.lib libpthread.lib
+LIBRARY       euser.lib estlib.lib
+
+SOURCEPATH    .
+START RESOURCE oggtest.rss
+HEADER
+TARGETPATH    \resource\apps
+LANG          SC
+END
+
+START RESOURCE oggtest_reg.rss
+TARGETPATH    \private\10003a3f\apps
+END
+
+CAPABILITY    LocalServices

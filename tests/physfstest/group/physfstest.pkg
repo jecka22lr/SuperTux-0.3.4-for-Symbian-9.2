@@ -1,0 +1,19 @@
+;;; PhysicsFS test for SuperTux Milestone 2 (not for release)
+;;; Borrows sdl.dll, sdlexe.dll and Open C from the installed SuperTux 0.1.3.
+&EN
+#{"FSTest"},(0xA000A021),0,1,0
+%{"Jecka22LR"}
+:"Jecka22LR"
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+; needs SuperTux 0.1.3 Final Release 1.1 (it provides SDL and Open C)
+(0xA000A003), 1, 1, 0, {"SuperTux"}
+
+"\epoc32\release\gcce\urel\physfstest.exe"-"!:\sys\bin\physfstest.exe"
+"\epoc32\data\z\resource\apps\physfstest.rsc"-"!:\resource\apps\physfstest.rsc"
+"\epoc32\data\z\private\10003a3f\apps\physfstest_reg.rsc"-"!:\private\10003a3f\import\apps\physfstest_reg.rsc"
+
+"..\data\data.zip"-"!:\resource\apps\supertux2\data.zip"
+"..\data\loose\loose.txt"-"!:\resource\apps\supertux2\loose\loose.txt"
+""-"c:\data\physfstest\log.txt",FILENULL
+""-"c:\data\physfstest\written.txt",FILENULL

@@ -1,0 +1,23 @@
+// st2sdlexe.dll: SuperTux 2's copy of SDL's application framework (sdlexe.dll)
+
+TARGET              st2sdlexe.dll
+TARGETTYPE          dll
+CAPABILITY          ReadUserData WriteUserData LocalServices NetworkServices
+UID                 0x1000008d 0xA000A032
+
+EPOCALLOWDLLDATA
+
+SOURCEPATH          ..\src
+SOURCE              st2sdlexe.cpp
+
+START RESOURCE st2sdlexe.rss
+HEADER
+TARGETPATH \resource\apps
+END
+
+SYSTEMINCLUDE       \epoc32\include \official\SDL-1.2.14\symbian\inc
+USERINCLUDE         \official\SDL-1.2.14\src\main\symbian
+
+LIBRARY             euser.lib st2sdl.lib
+LIBRARY             efsrv.lib cone.lib eikcoctl.lib avkon.lib eikdlg.lib apparc.lib eikctl.lib
+LIBRARY             eikcore.lib aknnotify.lib bafl.lib apgrfx.lib ws32.lib fbscli.lib

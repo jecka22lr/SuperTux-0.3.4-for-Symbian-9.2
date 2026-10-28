@@ -1,0 +1,22 @@
+NAME PFST
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <uikon.rh>
+#include <AppInfo.rh>
+
+RESOURCE RSS_SIGNATURE { }
+RESOURCE TBUF16 { buf=""; }
+RESOURCE EIK_APP_INFO { }
+
+RESOURCE LOCALISABLE_APP_INFO r_physfstest_appinfo
+	{
+	caption_and_icon =
+		{
+		CAPTION_AND_ICON_INFO
+			{
+			caption = "FSTest";
+			number_of_icons = 0;
+			}
+		};
+	}

@@ -1,0 +1,42 @@
+Community add-ons shipped with the SuperTux 0.3.4 S60v3 port
+=============================================================
+All GPL 2(+) / CC-by-sa 3.0. Each zip is a 0.3.x add-on (levels + an .nfo).
+The game mounts every zip in <install drive>:\resource\apps\supertux2\addons\;
+they show up under Contrib Levels and can be switched off in Options > Add-ons.
+
+From github.com/SuperTux/addons (in data 2 of 3 and the full package)
+  ctdabomb-worldmaps.zip         CT's Domain + Race to Penny     CT. da'Bomb
+  lolkat-levels.zip              Lolkat's Levels                 Lolkat
+  narre-land.zip                 Narre Land                      Narre
+  niso-yetis-revenge.zip         Yeti's Revenge                  niso (Nils Dunkel)
+  octo-levels.zip                octo's Levels                   Florian "octo" Forster
+  rubberduck-levels.zip          rubberducks levels              Basti
+  semajd-valley-of-chaos.zip     The Valley Of Chaos             semajD
+  treskalle-island-of-moob.zip   Island of Moob                  treskalle
+  wolf-levels.zip                Levels of Wolfs                 Wolfs
+
+From the "UltimaAddon JUN2013" collection (in data 4 of 4 and the full package)
+  anja-christophs-levels.zip     Christoph's                     Anja
+  torfi-dungeon-island.zip       Dungeon Island                  Torfi Gunnarsson, Blublu
+  hume-islands.zip               Hume's islands                  hume
+  hume-rainbow-cave.zip          Hume's rainbow cave             Hume, Ivan Mamchak
+  lmh-matties-world.zip          Mattie's World                  LMH
+  mantis-valley.zip              Mantis Valley                   Tore Bergebakken, Esteban,
+                                                                 CT. da'Bomb, sK!LL, Hume,
+                                                                 Wolfs, LMH, niso, GiBy,
+                                                                 Eliminator
+  schaefers-tux-strikes-back.zip Tux Strikes Back (for 0.1.3)    Christian Schaefers
+    Tux Strikes Back has no licence file in the collection; it is included as
+    GPL like all SuperTux levels.
+
+Changes for the port
+  ctdabomb-worldmaps: music/worldmap_tux.ogg (gone since 0.1.x) -> music/salcon.ogg
+    in the Penny worldmap, 4.6-icy mud, 10-lastnight, 13-owltemple and CT's
+    snow-log, snow-city, snow-high, final-snomans.
+  mantis-valley: NewIcelevel3/4 platforms/pedestral.sprite -> pedestal.sprite,
+    platforms/icesquare1.sprite -> sawblade/icesquare1.sprite.
+  Collection zips leave out images identical to stock 0.3.4, editor files
+    (.xcf, *~, Thumbs.db) and images no level uses.
+  Known harmless: the Penny and Mantis Valley tilesets name tiles/pipe/blueh.png,
+    which never existed; the engine uses its dummy texture and no level uses
+    those tiles.

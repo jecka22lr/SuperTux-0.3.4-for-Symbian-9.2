@@ -1,0 +1,11 @@
+;;; SuperTux 0.3.4 for S60 3rd Edition - split release, game data part 1 of 3
+&EN
+#{"SuperTux 2 data 1 of 3"},(0xA000A033),1,0,0
+%{"SuperTux Devel Team & Jecka22LR"}
+:"Jecka22LR"
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+; needs the SuperTux 2 program package installed first
+(0xA000A030), 1, 0, 0, {"SuperTux 2"}
+
+"..\..\package\st2_1_core.zip"-"!:\resource\apps\supertux2\st2_1_core.zip"
+"..\..\package\st2_2_images.zip"-"!:\resource\apps\supertux2\st2_2_images.zip"

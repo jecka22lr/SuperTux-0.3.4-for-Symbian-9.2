@@ -1,0 +1,18 @@
+// SDL_mixer 1.2.12 for SuperTux Milestone 2 (0.3.x): WAV and Ogg (Tremor) music and sounds.
+// Built from the shared sources in S:\official\SDL_mixer-release-1.2.12 under its own name,
+// so the Milestone 1 (0.1.3) sdl_mixer.lib stays exactly as it was.
+TARGET        sdl_mixer_ogg.lib
+TARGETTYPE    lib
+ALWAYS_BUILD_AS_ARM
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis \epoc32\include\esdl
+USERINCLUDE   \official\SDL_mixer-release-1.2.12
+
+MACRO         WAV_MUSIC
+MACRO         OGG_MUSIC
+MACRO         OGG_USE_TREMOR
+
+SOURCEPATH    \official\SDL_mixer-release-1.2.12
+SOURCE mixer.c music.c effect_position.c effect_stereoreverse.c effects_internal.c
+SOURCE load_aiff.c load_voc.c wavestream.c
+SOURCE music_ogg.c dynamic_ogg.c load_ogg.c

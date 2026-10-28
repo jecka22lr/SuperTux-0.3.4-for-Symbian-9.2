@@ -1,0 +1,8 @@
+PRJ_PLATFORMS
+GCCE
+
+PRJ_EXPORTS
+..\physfs.h \epoc32\include\physfs\physfs.h
+
+PRJ_MMPFILES
+physfs.mmp

@@ -1,0 +1,12 @@
+#include <AppInfo.rh>
+#include <supertux2.rsg>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xA000A030
+
+RESOURCE APP_REGISTRATION_INFO
+	{
+	app_file = "supertux2";
+	localisable_resource_file = "\\resource\\apps\\supertux2";
+	localisable_resource_id = R_SUPERTUX2_APPINFO;
+	}

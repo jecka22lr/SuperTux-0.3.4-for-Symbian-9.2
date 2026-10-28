@@ -1,0 +1,186 @@
+// st2sdl.dll: SuperTux 2's own copy of SDL 1.2.14, built from S:\official\SDL-1.2.14
+// (renamed so it never clashes with the sdl.dll of SuperTux 0.1.3 or other SDL games)
+
+// *** Definitions
+
+#ifdef EKA2
+TARGET              st2sdl.dll
+TARGETTYPE          dll
+EPOCALLOWDLLDATA    
+UID                 0x1000008d 0xA000A031
+CAPABILITY WriteUserData ReadUserData NetworkServices LocalServices
+//VENDORID 0
+#define S60_DEV
+#else
+
+TARGET          sdl.lib
+TARGETTYPE      lib
+#endif
+
+SOURCEPATH      \official\SDL-1.2.14\src
+
+// *** defines
+
+/*
+Enanable this to build on top of OpenC
+#define OPENC OPENC
+*/
+
+#ifdef OPENC
+MACRO 	OPENC
+#else	
+MACRO	SYMBIANC
+#endif
+
+#ifndef S80_DEV
+MACRO			SYMBIAN_SERIES60
+#else
+MACRO			SYMBIAN_CRYSTAL
+#endif
+
+//MACRO			TEST_BM_DRAW
+
+MACRO			NO_SIGNAL_H
+MACRO			ENABLE_EPOC 
+MACRO			DISABLE_JOYSTICK
+MACRO			DISABLE_CDROM
+//MACRO			DISABLE_AUDIO
+
+
+
+// *** General sources
+
+SOURCE          SDL.c
+SOURCE          SDL_error.c
+SOURCE          SDL_fatal.c
+#ifdef EKA2
+SOURCE			main\symbian\eka2\SDL_Main.cpp 
+SOURCE     	main\symbian\eka2\vectorbuffer.cpp 
+#else
+SOURCE     	main\symbian\eka1\SDL_Main.cpp  
+#endif
+
+// *** cpuinfo sources
+
+SOURCE  cpuinfo\SDL_cpuinfo.c
+
+// *** Video sources
+
+SOURCE          video\SDL_blit.c
+SOURCE          video\SDL_blit_0.c
+SOURCE          video\SDL_blit_1.c
+SOURCE          video\SDL_blit_A.c
+SOURCE          video\SDL_blit_N.c
+SOURCE          video\SDL_bmp.c
+SOURCE          video\SDL_cursor.c
+SOURCE          video\SDL_gamma.c
+SOURCE          video\SDL_pixels.c
+SOURCE          video\SDL_RLEaccel.c
+SOURCE          video\SDL_stretch.c
+SOURCE          video\SDL_surface.c
+SOURCE          video\SDL_video.c
+SOURCE          video\SDL_yuv.c
+SOURCE          video\SDL_yuv_mmx.c
+SOURCE          video\SDL_yuv_sw.c
+#ifdef EKA2
+SOURCE          video\symbian\eka2\SDL_epocvideo.cpp
+SOURCE          video\symbian\eka2\SDL_epocevents.cpp 
+SOURCE          video\symbian\eka2\dsa.cpp 
+#else
+SOURCE          video\epoc\eka1\SDL_epocvideo.cpp
+SOURCE          video\epoc\eka1\SDL_epocevents.cpp 
+#endif
+  
+
+// *** Audio sources
+SOURCE		audio\SDL_audio.c
+SOURCE		audio\SDL_audiocvt.c
+SOURCE		audio\SDL_audiodev.c
+//SOURCE		audio\SDL_audiomem.c
+SOURCE		audio\SDL_mixer.c
+SOURCE		audio\SDL_wave.c
+SOURCE		audio\symbian\SDL_epocaudio.cpp
+SOURCE		audio\symbian\streamplayer.cpp
+
+// *** Endian sources
+
+//SOURCE          endian\SDL_endian.c
+
+// *** Thread sources
+
+SOURCE          thread\SDL_thread.c
+SOURCE          thread\generic\SDL_syscond.c
+SOURCE          thread\symbian\SDL_sysmutex.cpp
+SOURCE          thread\symbian\SDL_syssem.cpp
+SOURCE          thread\symbian\SDL_systhread.cpp
+
+// *** Events sources
+
+SOURCE          events\SDL_active.c
+SOURCE          events\SDL_events.c
+SOURCE          events\SDL_keyboard.c
+SOURCE          events\SDL_mouse.c
+SOURCE          events\SDL_quit.c
+SOURCE          events\SDL_resize.c
+
+// *** Timer sources
+
+SOURCE          timer\SDL_timer.c
+SOURCE          timer\symbian\SDL_systimer.cpp
+
+// *** File sources
+
+SOURCE          file\SDL_rwops.c
+
+//*** Stdlib
+
+SOURCE			stdlib\SDL_string.c
+SOURCE			stdlib\SDL_getenv.c
+
+
+// *** Include paths
+
+SYSTEMINCLUDE \epoc32\include 
+#ifdef OPENC
+SYSTEMINCLUDE   \epoc32\include\stdapis
+#else
+SYSTEMINCLUDE   \epoc32\include\libc
+#endif
+
+USERINCLUDE     \official\SDL-1.2.14\include \official\SDL-1.2.14\src \official\SDL-1.2.14\src\video \official\SDL-1.2.14\src\events
+USERINCLUDE		\official\SDL-1.2.14\src\audio \official\SDL-1.2.14\src\audio\symbian
+USERINCLUDE     \official\SDL-1.2.14\src\main\symbian \official\SDL-1.2.14\src\video\symbian
+USERINCLUDE     \official\SDL-1.2.14\src\thread \official\SDL-1.2.14\src\thread\generic \official\SDL-1.2.14\src\thread\symbian
+USERINCLUDE     \official\SDL-1.2.14\src\timer \official\SDL-1.2.14\src\joystick
+
+#ifndef EKA2
+USERINCLUDE      sdl_epocruntime\inc
+#endif
+
+USERINCLUDE     \official\SDL-1.2.14\symbian\inc
+
+//USERINCLUDE		\eaudiolib\inc
+
+
+// *** Libraries
+
+#ifdef EKA2
+LIBRARY        euser.lib fbscli.lib ws32.LIB  gdi.lib
+LIBRARY        mediaclientaudiostream.lib
+
+LIBRARY         avkon.lib efsrv.lib bafl.lib apparc.lib
+LIBRARY         eikcore.lib cone.lib bitgdi.lib scdv.lib
+
+LIBRARY        flogger.lib
+
+#ifdef OPENC
+LIBRARY   libc.lib
+LIBRARY	  libm.lib
+#else
+LIBRARY 	estlib.lib 
+#endif
+
+OPTION_REPLACE ARMCC --cpu ARM926EJ-S -O3 -Otime
+ALWAYS_BUILD_AS_ARM
+#endif
+

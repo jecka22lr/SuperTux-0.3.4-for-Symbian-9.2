@@ -1,0 +1,23 @@
+NAME STX2
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <uikon.rh>
+#include <AppInfo.rh>
+
+RESOURCE RSS_SIGNATURE { }
+RESOURCE TBUF16 { buf=""; }
+RESOURCE EIK_APP_INFO { }
+
+RESOURCE LOCALISABLE_APP_INFO r_supertux2_appinfo
+	{
+	caption_and_icon =
+		{
+		CAPTION_AND_ICON_INFO
+			{
+			caption = "SuperTux 2";
+			number_of_icons = 1;
+			icon_file = "\\resource\\apps\\supertux2_icon.mbm"; // made by bmconv in build_supertux2.bat
+			}
+		};
+	}

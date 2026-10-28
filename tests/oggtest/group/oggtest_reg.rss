@@ -1,0 +1,12 @@
+#include <AppInfo.rh>
+#include <oggtest.rsg>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xA000A020
+
+RESOURCE APP_REGISTRATION_INFO
+	{
+	app_file = "oggtest";
+	localisable_resource_file = "\\resource\\apps\\oggtest";
+	localisable_resource_id = R_OGGTEST_APPINFO;
+	}

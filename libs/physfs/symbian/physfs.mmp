@@ -1,0 +1,19 @@
+// PhysicsFS 2.0.3 for Symbian S60 3rd Edition (Open C), as a static library.
+// Directory and .zip archive support; zip decompression uses Open C's libz.
+TARGET        physfs.lib
+TARGETTYPE    lib
+ALWAYS_BUILD_AS_ARM
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis
+USERINCLUDE   ..
+
+MACRO         PHYSFS_SUPPORTS_ZIP
+MACRO         PHYSFS_NO_CDROM_SUPPORT
+MACRO         PHYSFS_NO_THREAD_SUPPORT
+
+SOURCEPATH    ..
+SOURCE        physfs.c physfs_byteorder.c physfs_unicode.c
+SOURCEPATH    ..\archivers
+SOURCE        dir.c zip.c
+SOURCEPATH    ..\platform
+SOURCE        posix.c symbian.c

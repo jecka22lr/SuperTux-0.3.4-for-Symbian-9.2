@@ -1,0 +1,11 @@
+signing_password.txt
+*.sis
+*.sisx
+*_log.txt
+build_log.txt
+TEMPMAKSYSDECOY*/
+supertux2_game_src.zip
+# signing keys never go here
+*.key
+*.cer
+*.pem

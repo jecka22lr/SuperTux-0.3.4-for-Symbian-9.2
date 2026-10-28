@@ -1,0 +1,42 @@
+//  RESOURCE IDENTIFIER
+NAME    STSE // 4 letter ID (SuperTux 2 copy of sdlexe.rss)
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include <avkon.rh>
+#include <avkon.rsg>
+#include <avkon.mbg>
+#include <eikon.hrh>
+
+#include <appinfo.rh>
+
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+
+
+RESOURCE DIALOG r_parameditor
+	{
+	flags = EGeneralQueryFlags;
+  buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+  items = 
+  	{
+		DLG_LINE
+			{
+			type = EAknCtQuery;
+			id = 1000;
+			control = AVKON_DATA_QUERY
+				{
+				layout = EDataLayout;
+				control = EDWIN
+					{
+					lines = 1; 
+					width = 256;
+					maxlength = 255;
+					};
+				};
+			}
+		};
+	} 

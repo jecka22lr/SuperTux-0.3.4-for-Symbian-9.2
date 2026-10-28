@@ -1,0 +1,21 @@
+;;; SuperTux 0.3.4 for S60 3rd Edition - split release, game data part 2 of 3
+&EN
+#{"SuperTux 2 data 2 of 3"},(0xA000A034),1,0,0
+%{"SuperTux Devel Team & Jecka22LR"}
+:"Jecka22LR"
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+; needs the SuperTux 2 program package installed first
+(0xA000A030), 1, 0, 0, {"SuperTux 2"}
+
+"..\..\package\st2_3_images.zip"-"!:\resource\apps\supertux2\st2_3_images.zip"
+
+; community add-on levels for 0.3.x (GPL / CC-BY-SA, from github.com/SuperTux/addons)
+"..\..\package\addons\ctdabomb-worldmaps.zip"-"!:\resource\apps\supertux2\addons\ctdabomb-worldmaps.zip"
+"..\..\package\addons\lolkat-levels.zip"-"!:\resource\apps\supertux2\addons\lolkat-levels.zip"
+"..\..\package\addons\narre-land.zip"-"!:\resource\apps\supertux2\addons\narre-land.zip"
+"..\..\package\addons\niso-yetis-revenge.zip"-"!:\resource\apps\supertux2\addons\niso-yetis-revenge.zip"
+"..\..\package\addons\octo-levels.zip"-"!:\resource\apps\supertux2\addons\octo-levels.zip"
+"..\..\package\addons\rubberduck-levels.zip"-"!:\resource\apps\supertux2\addons\rubberduck-levels.zip"
+"..\..\package\addons\semajd-valley-of-chaos.zip"-"!:\resource\apps\supertux2\addons\semajd-valley-of-chaos.zip"
+"..\..\package\addons\treskalle-island-of-moob.zip"-"!:\resource\apps\supertux2\addons\treskalle-island-of-moob.zip"
+"..\..\package\addons\wolf-levels.zip"-"!:\resource\apps\supertux2\addons\wolf-levels.zip"

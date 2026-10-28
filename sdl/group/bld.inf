@@ -1,0 +1,7 @@
+// SuperTux 2's own SDL: st2sdl.dll + st2sdlexe.dll (sources stay in S:\official\SDL-1.2.14)
+PRJ_PLATFORMS
+GCCE
+
+PRJ_MMPFILES
+st2sdl.mmp
+st2sdlexe.mmp

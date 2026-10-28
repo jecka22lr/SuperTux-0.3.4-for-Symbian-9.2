@@ -1,0 +1,57 @@
+;;; SuperTux 0.3.4 for S60 3rd Edition - full package: program, SDL, Open C, game data and add-ons.
+;;; Built and signed by S:\supertux2_symbian\make_release2.bat. For S60 3rd Edition phones; if an
+;;; original S60 3.0 phone refuses it, use the split packages from make_split2.bat instead.
+&EN
+#{"SuperTux 2"},(0xA000A030),1,0,0
+%{"SuperTux Devel Team & Jecka22LR"}
+:"Jecka22LR"
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+; Open C / C++ 1.6 runtimes (Nokia signed), installed first if the phone lacks them
+@"\nokia_plugin\openc\s60opencsis\pips_s60_1_6_SS.sis",(0x20013851)
+@"\nokia_plugin\openc\s60opencsis\openc_ssl_s60_1_6_SS.sis",(0x200110CB)
+@"\nokia_plugin\opencpp\s60opencppsis\STDCPP_s60_1_6_SS.sis",(0x2000F866)
+
+; licence and credits, shown during installation
+"install_notice.txt"-"", FT, TC
+"COPYING"-"c:\data\supertux2\COPYING"
+"\official\SDL-1.2.14\COPYING"-"c:\data\supertux2\COPYING.SDL"
+
+; program, its own SDL (st2sdl.dll / st2sdlexe.dll, separate from SuperTux 0.1.3's sdl.dll), resources, icon
+"\epoc32\release\gcce\urel\supertux2.exe"-"!:\sys\bin\supertux2.exe"
+"\epoc32\release\gcce\urel\st2sdl.dll"-"!:\sys\bin\st2sdl.dll"
+"\epoc32\release\gcce\urel\st2sdlexe.dll"-"!:\sys\bin\st2sdlexe.dll"
+"\epoc32\data\z\resource\apps\supertux2.rsc"-"!:\resource\apps\supertux2.rsc"
+"\epoc32\data\z\resource\apps\st2sdlexe.rsc"-"!:\resource\apps\st2sdlexe.rsc"
+"\epoc32\data\z\resource\apps\st2sdlexe.mbm"-"!:\resource\apps\st2sdlexe.mbm"
+"\epoc32\data\z\resource\apps\supertux2_icon.mbm"-"!:\resource\apps\supertux2_icon.mbm"
+"\epoc32\data\z\private\10003a3f\apps\supertux2_reg.rsc"-"!:\private\10003a3f\import\apps\supertux2_reg.rsc"
+
+; game data, read by PhysicsFS from the install drive
+"..\..\package\st2_1_core.zip"-"!:\resource\apps\supertux2\st2_1_core.zip"
+"..\..\package\st2_2_images.zip"-"!:\resource\apps\supertux2\st2_2_images.zip"
+"..\..\package\st2_3_images.zip"-"!:\resource\apps\supertux2\st2_3_images.zip"
+"..\..\package\st2_4_music.zip"-"!:\resource\apps\supertux2\st2_4_music.zip"
+
+; community add-on levels for 0.3.x (GPL / CC-BY-SA, from github.com/SuperTux/addons)
+"..\..\package\addons\ctdabomb-worldmaps.zip"-"!:\resource\apps\supertux2\addons\ctdabomb-worldmaps.zip"
+"..\..\package\addons\lolkat-levels.zip"-"!:\resource\apps\supertux2\addons\lolkat-levels.zip"
+"..\..\package\addons\narre-land.zip"-"!:\resource\apps\supertux2\addons\narre-land.zip"
+"..\..\package\addons\niso-yetis-revenge.zip"-"!:\resource\apps\supertux2\addons\niso-yetis-revenge.zip"
+"..\..\package\addons\octo-levels.zip"-"!:\resource\apps\supertux2\addons\octo-levels.zip"
+"..\..\package\addons\rubberduck-levels.zip"-"!:\resource\apps\supertux2\addons\rubberduck-levels.zip"
+"..\..\package\addons\semajd-valley-of-chaos.zip"-"!:\resource\apps\supertux2\addons\semajd-valley-of-chaos.zip"
+"..\..\package\addons\treskalle-island-of-moob.zip"-"!:\resource\apps\supertux2\addons\treskalle-island-of-moob.zip"
+"..\..\package\addons\wolf-levels.zip"-"!:\resource\apps\supertux2\addons\wolf-levels.zip"
+; more community levels for 0.3.x (GPL / CC-BY-SA, from the June 2013 add-on collection)
+"..\..\package\addons\anja-christophs-levels.zip"-"!:\resource\apps\supertux2\addons\anja-christophs-levels.zip"
+"..\..\package\addons\torfi-dungeon-island.zip"-"!:\resource\apps\supertux2\addons\torfi-dungeon-island.zip"
+"..\..\package\addons\hume-islands.zip"-"!:\resource\apps\supertux2\addons\hume-islands.zip"
+"..\..\package\addons\hume-rainbow-cave.zip"-"!:\resource\apps\supertux2\addons\hume-rainbow-cave.zip"
+"..\..\package\addons\lmh-matties-world.zip"-"!:\resource\apps\supertux2\addons\lmh-matties-world.zip"
+"..\..\package\addons\mantis-valley.zip"-"!:\resource\apps\supertux2\addons\mantis-valley.zip"
+"..\..\package\addons\schaefers-tux-strikes-back.zip"-"!:\resource\apps\supertux2\addons\schaefers-tux-strikes-back.zip"
+
+; removed on uninstall (saves in c:\data\supertux2\profile* are kept)
+""-"c:\data\supertux2\log.txt",FILENULL
+""-"c:\data\supertux2\config",FILENULL

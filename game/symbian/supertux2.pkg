@@ -1,0 +1,32 @@
+;;; SuperTux 0.3.4 for S60 3rd Edition - test package (program only, quick to build and install)
+;;; Standalone: no longer needs SuperTux 0.1.3. The game data (st2_*.zip) is NOT in this package,
+;;; it must already be in <drive>:\resource\apps\supertux2 (use supertux2_full.pkg for a phone).
+&EN
+#{"SuperTux 2"},(0xA000A030),0,99,0
+%{"SuperTux Devel Team & Jecka22LR"}
+:"Jecka22LR"
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+; Open C / C++ 1.6 runtimes (Nokia signed), installed first if the phone lacks them
+@"\nokia_plugin\openc\s60opencsis\pips_s60_1_6_SS.sis",(0x20013851)
+@"\nokia_plugin\openc\s60opencsis\openc_ssl_s60_1_6_SS.sis",(0x200110CB)
+@"\nokia_plugin\opencpp\s60opencppsis\STDCPP_s60_1_6_SS.sis",(0x2000F866)
+
+; licence and credits, shown during installation
+"install_notice.txt"-"", FT, TC
+"COPYING"-"c:\data\supertux2\COPYING"
+"\official\SDL-1.2.14\COPYING"-"c:\data\supertux2\COPYING.SDL"
+
+; program, its own SDL (st2sdl.dll / st2sdlexe.dll, separate from SuperTux 0.1.3's sdl.dll), resources, icon
+"\epoc32\release\gcce\urel\supertux2.exe"-"!:\sys\bin\supertux2.exe"
+"\epoc32\release\gcce\urel\st2sdl.dll"-"!:\sys\bin\st2sdl.dll"
+"\epoc32\release\gcce\urel\st2sdlexe.dll"-"!:\sys\bin\st2sdlexe.dll"
+"\epoc32\data\z\resource\apps\supertux2.rsc"-"!:\resource\apps\supertux2.rsc"
+"\epoc32\data\z\resource\apps\st2sdlexe.rsc"-"!:\resource\apps\st2sdlexe.rsc"
+"\epoc32\data\z\resource\apps\st2sdlexe.mbm"-"!:\resource\apps\st2sdlexe.mbm"
+"\epoc32\data\z\resource\apps\supertux2_icon.mbm"-"!:\resource\apps\supertux2_icon.mbm"
+"\epoc32\data\z\private\10003a3f\apps\supertux2_reg.rsc"-"!:\private\10003a3f\import\apps\supertux2_reg.rsc"
+
+; removed on uninstall (saves in c:\data\supertux2\profile* are kept)
+""-"c:\data\supertux2\log.txt",FILENULL
+""-"c:\data\supertux2\config",FILENULL
